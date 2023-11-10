@@ -23,5 +23,5 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   payOnMonth = credit * (bet + (bet / (((1 + bet)**countMonths) - 1))),
   payForAllCredit = payOnMonth * countMonths,
   number = payForAllCredit.toFixed(2);
-  return parseFloat((Math.round(number * 100) / 100).toFixed(2));
+  return parseFloat((Math.round(number * 100) / 100));
 }
