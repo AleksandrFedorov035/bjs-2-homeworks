@@ -26,10 +26,22 @@ class AlarmClock {
     }
 
     getCurrentFormattedTime() {
-        return new Date().toLocaleTimeString("ru-Ru", {
-			hour: "2-digit",
-			minute: "2-digit",
-		});
+        // return new Date().toLocaleTimeString("ru-Ru", {
+		// 	hour: "2-digit",
+		// 	minute: "2-digit",
+		// });
+		const today = new Date();
+		let hours = today.getHours();
+		let minutes = today.getMinutes();
+
+		if(hours < 10) {
+			hours = "0" + hours;
+		}
+		if ( minutes < 10) {
+			minutes = "0" + minutes
+		}
+		let res = `${hours}:${minutes}`;
+		return res;
     }
 
     start() {
